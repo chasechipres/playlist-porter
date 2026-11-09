@@ -26,7 +26,7 @@ TOKEN_URL = "https://accounts.spotify.com/api/token"
 SCOPES = "playlist-modify-private playlist-modify-public"
 # Spotify requires loopback redirect URIs to use an IP literal, not "localhost".
 DEFAULT_REDIRECT_URI = "http://127.0.0.1:8888/callback"
-APP_DIR_NAME = "csv-playlist-import"
+APP_DIR_NAME = "playlist-porter"
 
 
 class AuthError(RuntimeError):
@@ -183,7 +183,7 @@ class Auth:
     def refresh(self) -> dict:
         current = self.store.load()
         if not current or current.get("client_id") != self.client_id or not current.get("refresh_token"):
-            raise AuthError("Not signed in. Run: csv-playlist-import login")
+            raise AuthError("Not signed in. Run: playlist-porter login")
         data = self._token_request(
             {
                 "grant_type": "refresh_token",
@@ -210,7 +210,7 @@ class Auth:
     def access_token(self) -> str:
         token = self.store.load()
         if not token or token.get("client_id") != self.client_id:
-            raise AuthError("Not signed in with this Client ID. Run: csv-playlist-import login")
+            raise AuthError("Not signed in with this Client ID. Run: playlist-porter login")
         if token["expires_at"] - 60 <= self._now():
             token = self.refresh()
         return token["access_token"]

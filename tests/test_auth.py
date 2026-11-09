@@ -5,7 +5,7 @@ import urllib.request
 
 import pytest
 
-from csv_playlist_import.auth import (
+from playlist_porter.auth import (
     Auth,
     AuthError,
     TokenStore,

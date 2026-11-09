@@ -2,7 +2,7 @@ import json
 
 import pytest
 
-from csv_playlist_import.api import SpotifyClient, SpotifyError, pick_match
+from playlist_porter.api import SpotifyClient, SpotifyError, pick_match
 from conftest import FakeSend, uri
 
 

@@ -1,6 +1,6 @@
 import csv
 
-from csv_playlist_import.importer import import_csv, split_parts, write_report
+from playlist_porter.importer import import_csv, split_parts, write_report
 from conftest import FakeClient, uri, write_csv
 
 

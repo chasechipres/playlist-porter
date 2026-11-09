@@ -2,7 +2,7 @@ import json
 
 import pytest
 
-from csv_playlist_import.transport import Response
+from playlist_porter.transport import Response
 
 
 def uri(n: int, kind: str = "track") -> str:

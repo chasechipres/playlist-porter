@@ -64,7 +64,7 @@ def cmd_import(args) -> int:
 
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
-        prog="csv-playlist-import",
+        prog="playlist-porter",
         description="Import Exportify-style CSV playlists into Spotify with your own developer app.",
     )
     common = argparse.ArgumentParser(add_help=False)

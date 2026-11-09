@@ -1,4 +1,4 @@
-# csv-playlist-import
+# playlist-porter
 
 Import playlists from CSV files into Spotify, with no limit on how many playlists or tracks you import.
 
@@ -50,7 +50,7 @@ You need Python 3.10+ and a Spotify Premium account.
 
 ```bash
 git clone <this repo>
-cd csv-playlist-import
+cd playlist-porter
 pip install .
 ```
 
@@ -58,15 +58,15 @@ pip install .
 
 ```bash
 export SPOTIFY_CLIENT_ID=your_client_id        # PowerShell: $env:SPOTIFY_CLIENT_ID="your_client_id"
-csv-playlist-import login
+playlist-porter login
 ```
 
 Your browser opens Spotify's consent page. After you approve, the token is saved to your user config folder, never to the project folder:
 
-- Windows: `%APPDATA%\csv-playlist-import\token.json`
-- macOS / Linux: `~/.config/csv-playlist-import/token.json`
+- Windows: `%APPDATA%\playlist-porter\token.json`
+- macOS / Linux: `~/.config/playlist-porter/token.json`
 
-The token refreshes automatically. `csv-playlist-import logout` deletes it.
+The token refreshes automatically. `playlist-porter logout` deletes it.
 
 The app requests only the `playlist-modify-private` and `playlist-modify-public` scopes.
 
@@ -74,13 +74,13 @@ The app requests only the `playlist-modify-private` and `playlist-modify-public`
 
 ```bash
 # One CSV -> one private playlist named "Road Trip"
-csv-playlist-import import "Road Trip.csv"
+playlist-porter import "Road Trip.csv"
 
 # Every CSV in a folder
-csv-playlist-import import ./exports
+playlist-porter import ./exports
 
 # Public playlists, and a custom report location
-csv-playlist-import import ./exports --public --report skipped.csv
+playlist-porter import ./exports --public --report skipped.csv
 ```
 
 You can pass `--client-id` instead of setting `SPOTIFY_CLIENT_ID`. If you registered a different redirect URI, pass it with `--redirect-uri`. `import` signs you in first if you aren't signed in yet.

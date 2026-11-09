@@ -1,6 +1,6 @@
 import pytest
 
-from csv_playlist_import.csvfile import CsvFormatError, find_csvs, read_rows
+from playlist_porter.csvfile import CsvFormatError, find_csvs, read_rows
 from conftest import uri, write_csv
 
 
