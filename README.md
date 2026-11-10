@@ -103,6 +103,8 @@ Road Trip.csv,30,Rare B-Side,Some Band,,no search match
 
 ## Development
 
+Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md). In short: all changes go through squash-merged pull requests, and the CI test check must pass.
+
 The site is the `docs/` folder, published by GitHub Pages from `main`.
 
 ```
