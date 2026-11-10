@@ -4,25 +4,15 @@
 !.env.example
 token.json
 *.token
-.cache
-.cache-*
 
-# Personal playlist data and import reports (test fixtures are generated in tmp dirs)
+# Personal playlist data and import reports (tests build their CSVs in memory)
 *.csv
 playlists/
 skipped-tracks.csv
 
-# Python
-__pycache__/
-*.py[cod]
-*.egg-info/
-.venv/
-venv/
-build/
-dist/
-.pytest_cache/
-.coverage
-htmlcov/
+# Node
+node_modules/
+coverage/
 
 # Editors / OS
 .vscode/
