@@ -1,0 +1,14 @@
+{
+  "name": "playlist-porter",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Import CSV playlists into Spotify with your own developer app, from a static web page.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "test": "node --test \"tests/*.test.js\""
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
