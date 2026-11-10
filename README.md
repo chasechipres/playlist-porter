@@ -6,6 +6,17 @@ It reads [Exportify](https://exportify.net)-style CSVs, signs you in with **your
 
 Not affiliated with or endorsed by Spotify.
 
+## Getting your CSVs: use Exportify
+
+playlist-porter only imports. To get CSVs of your playlists, use [Exportify](https://exportify.net) ([source](https://github.com/pavelkomarov/exportify)). Its exports include more than track lists:
+
+- **Genres**, from each artist's Spotify profile
+- **Audio features**: Danceability, Energy, Valence (how happy a track sounds), Tempo, Key, Loudness and more
+
+These columns let you re-sort a library by mood, not just by artist. For example, use Genres to pick a family (trap, R&B/pop, hyperpop…), then Valence and Energy to split hype tracks from moody ones, song by song. Do the sorting with a spreadsheet, a script or an AI chat, save each group as its own CSV, then import the folder with playlist-porter.
+
+**Why playlist-porter can't export these itself:** Spotify closed its audio-features endpoint to new developer apps in November 2024. In February 2026 it also removed the bulk artist lookup that genres come from for development-mode apps. Exportify still calls both, through its own long-standing app that every Exportify user signs in to. Your own new app (see below) can't make those calls. Exportify's access is up to Spotify and could end at any time. playlist-porter doesn't depend on it, because importing only needs the `Track URI` column.
+
 ## Features
 
 - One CSV becomes one playlist, named after the file. Pass a folder to import every `.csv` in it.
