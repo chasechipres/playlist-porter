@@ -18,12 +18,15 @@ class Row:
     row: int  # spreadsheet row number (header is row 1)
     uri: str
     name: str
-    artists: str  # raw comma-separated artist string as exported
+    artists: str  # raw artist string as exported
     album: str
 
     @property
     def first_artist(self) -> str:
-        return self.artists.split(",")[0].strip()
+        # Exportify separates artists with ";" so names like "Tyler, The Creator"
+        # keep their commas. Older exports used ",".
+        sep = ";" if ";" in self.artists else ","
+        return self.artists.split(sep)[0].strip()
 
 
 class CsvFormatError(ValueError):

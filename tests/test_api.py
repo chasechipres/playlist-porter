@@ -119,7 +119,7 @@ def test_pick_match_requires_artist_and_prefers_album():
 
 def test_pick_match_handles_artist_names_with_commas():
     cands = [track(uri(1), "See You Again", ["Tyler, The Creator"])]
-    assert pick_match(cands, "See You Again", "Tyler, The Creator,Kali Uchis", "") == uri(1)
+    assert pick_match(cands, "See You Again", "Tyler, The Creator;Kali Uchis", "") == uri(1)
 
 
 def test_pick_match_without_artist_needs_exact_name():
